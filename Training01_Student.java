@@ -52,8 +52,12 @@ public class Training01_Student {
 				System.out.println("학생 이름 :");
 				String removeName = sc.nextLine();
 				for (int i=0; i<student.size(); i++) {
-					System.out.println("테스트");
-					if (removeName.equals(student.get(i))) { // equals 사용하니깐 됨 if (name2 == student.get(i))는 안됐음.
+					// String studentName = student.get(i) ;; 로 아래 get(i) 부분을 대체할 수 있다
+					
+					/* int removeIndex = student.indexOf(removeName);
+					student.remove(removeIndex); */
+					
+					if (removeName.equals(student.get(i))) { // heap이라 equals 사용하기. 주소값 비교
 						student.remove(i);
 						System.out.println(removeName + "학생이 제거되었습니다.");
 					}
@@ -66,7 +70,6 @@ public class Training01_Student {
 			default:
 				System.out.println("잘못된 메뉴를 선택하셨습니다.");
 			}
-			
 		}
 		
 	}
